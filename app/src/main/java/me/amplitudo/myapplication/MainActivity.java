@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.aseem.versatileprogressbar.ProgBar;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,16 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Planet> planets = new ArrayList<>();
 
-        planets.add(new Planet("Namek", "https://vignette.wikia.nocookie.net/animecross2roblox/images/e/eb/Base_Goku.png"));
-        planets.add(new Planet("Zemlja", "https://vignette.wikia.nocookie.net/animecross2roblox/images/e/eb/Base_Goku.png"));
-        planets.add(new Planet("Vegeta", "https://vignette.wikia.nocookie.net/animecross2roblox/images/e/eb/Base_Goku.png"));
+        planets.add(new Planet("Namek", "https://vignette.wikia.nocookie.net/animecross2roblox/images/e/eb/Base_Goku.png", 1));
+        planets.add(new Planet("Namek", "https://astrosavet.files.wordpress.com/2018/11/sun_clipart.png?crop", 0));
+        planets.add(new Planet("Zemlja", "https://vignette.wikia.nocookie.net/animecross2roblox/images/e/eb/Base_Goku.png", 1));
+        planets.add(new Planet("Vegeta", "https://vignette.wikia.nocookie.net/animecross2roblox/images/e/eb/Base_Goku.png", 0));
+        planets.add(new Planet("Sunce", "https://astrosavet.files.wordpress.com/2018/11/sun_clipart.png", 0));
 
         PlanetsAdapter planetsAdapter = new PlanetsAdapter(this, planets);
         planetsRecyclerView.setAdapter(planetsAdapter);
 
-        planets.add(new Planet("Test", "test.png"));
+        planets.add(new Planet("Test", "test.png", 1));
         adapter.notifyDataSetChanged();
 
+
+        ProgBar customBar = findViewById(R.id.custom_progress_bar);
 
     }
 
